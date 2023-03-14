@@ -1,0 +1,57 @@
+{
+	"snippet functional Component": {
+		"prefix": "component",
+        "scope": "typescriptreact",
+		"isFileTemplate": true,
+		"body": [
+			"import React, { useEffect, useState, useMemo } from \"react\";",
+			"import classNames from \"classnames\";",
+			"import CSS from \"./${TM_FILENAME/(.)\\..+$/$1/}.module.scss\"\n",
+			"interface $1ComponentProps {",
+			"\t${2:key}: ${3:type};$4\r",
+			"}",
+			"export function ${1:${TM_FILENAME_BASE/(.*)(.component)$/${1:/pascalcase}/}}({${2:prop1}}: $1ComponentProps): JSX.Element {",
+			"\tconst cx = useMemo(() => classNames.bind(CSS), []);",
+			"\t",
+			"return(<>",
+			"\t$5",
+			"</>",
+			")}\n",
+		],
+		"description": "Create a react typescript functional Component with classnames"
+	},
+	"snippet useEffect react": {
+		"prefix": "useEffect()",
+        "scope": "typescriptreact",
+		"body": [
+			"useEffect(() => {",
+			"\t$1",
+			"}, [$2]);"
+		]
+	},
+	"snippet useCallback react": {
+		"prefix": "useCallback()",
+        "scope": "typescriptreact",
+		"body": ["const ${1:functionName} = useCallback((${2:param}:${3:type}) => {",
+		"\t$4",
+		"}, [$5]);"]
+	},
+	"snippet useState react": {
+		"prefix": "useState()",
+        "scope": "typescriptreact",
+		"body": ["const [${1:stateName}, set${1/(.)/${1:/capitalize}/}] = useState<${2:stateType}>(${3:initialValue});"]
+	},
+	"snippet useNavigate react": {
+		"prefix": "useNavigate()",
+        "scope": "typescriptreact",
+		"body": [
+			"const navigate = useNavigate();",
+			"navigate(`/${1:path}/${${2:pathParam}}`);"
+		]
+	},
+	"snippet useParams react": {
+		"prefix": "useParams()",
+        "scope": "typescriptreact",
+		"body": ["const { ${1:pathVariable} = \"\" } = useParams();"]
+	},
+}

@@ -1,0 +1,22 @@
+{
+	"function import": {
+		"prefix": "function.scss",
+        "scope": "scss",
+		"body": ["@import \"/src/styles/functions\";"]
+	},
+	"color import": {
+		"prefix": "colors.scss",
+        "scope": "scss",
+		"body": ["@import \"/src/styles/colors\";"]
+	},
+	"pxToRem": {
+		"prefix": "pxToRem",
+        "scope": "scss",
+		"body": ["pxToRem(${1:px-value});$2"]
+	},
+	"border": {
+		"prefix": "border: 1px solid ",
+        "scope": "scss",
+		"body": ["border: ${2:1px} solid map-get(\\$map: \\$grey, \\$key: ${1:5});"]
+	}
+}

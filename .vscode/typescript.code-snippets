@@ -1,0 +1,44 @@
+{
+	"interface snippet": {
+		"prefix": "interface",
+		"scope": "typescript",
+		"body": [
+			"export interface ${1:${TM_FILENAME_BASE/([^.]+)\\..+$/${1:/capitalize}/}} {",
+			"\t${2:key}: ${3:type};$4\r}"
+		]
+	},
+	"enum snippet": {
+		"prefix": "enum",
+		"scope": "typescript",
+		"body" : [
+			"export declare enum ${1:${TM_FILENAME_BASE/([^.]+)\\..+$/${1:/capitalize}/}} {",
+			"\t${2:key} = ${3:value},$4\r",
+			"}"
+		]
+	},
+	"express routes snippet": {
+		"isFileTemplate": true,
+		"prefix": "router.use(\"/\", middleware);",
+		"scope": "typescript",
+		"body": [
+			"import express from \"express\";\n",
+			"const ${1:routeName} = express.Router();",
+			"${1:routeName}.${2|use,get,post,put,patch,delete|}(\"/${3:routePath}\", ${4:middleware});",
+			"\nexport default $1;\n"
+		]
+	},
+	"express request handler snippet":{
+		"prefix": "async (req: Request, res: Response) => {",
+		"scope": "typescript",
+		"body": [
+			"const ${1:handler} = async (req: Request, res: Response) => {",
+			"\ttry {",
+			"\t\tconst ${2:responseData} = await ${3:mongooseModel}.${4:query};",
+			"\t\tres.status(200).json($2);\r",
+			"\t} catch (error) {",
+			"\t\tres.status(${5:404}).json(new ApiError(\"${6:Not Found}\", error));\r",
+			"\t}\r",
+			"}\r"
+		]
+	}
+}

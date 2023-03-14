@@ -2,9 +2,17 @@
   "name": "micro-frontends",
   "version": "1.0.0",
   "description": "manage microfrontends using postmessages and localstorage events",
-  "main": "index.js",
+  "engines": {
+    "node": "18.12.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:angular": "npm run build -w angular-parent",
+    "build:react": "npm run build -w react-typescript",
+    "build:vue": "npm run build -w vue2-grand-child",
+    "build:all": "npm run build:react && npm run build:vue && npm run build:angular ",
+    "build": "npm run build:all && sh bundler.sh",
+    "start": "http-server ./dist -p 0 -o -b --cors"
   },
   "repository": {
     "type": "git",
@@ -23,5 +31,8 @@
     "react-typescript",
     "angular-parent",
     "vue2-grand-child"
-  ]
+  ],
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
 }
