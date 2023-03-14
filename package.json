@@ -1,0 +1,22 @@
+{
+  "name": "micro-frontends",
+  "version": "1.0.0",
+  "description": "manage microfrontends using postmessages and localstorage events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KumarSidharth/micro-frontends.git"
+  },
+  "keywords": [
+    "micro-frontends"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KumarSidharth/micro-frontends/issues"
+  },
+  "homepage": "https://github.com/KumarSidharth/micro-frontends#readme"
+}
