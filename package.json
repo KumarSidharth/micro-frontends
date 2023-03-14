@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/KumarSidharth/micro-frontends/issues"
   },
-  "homepage": "https://github.com/KumarSidharth/micro-frontends#readme"
+  "homepage": "https://github.com/KumarSidharth/micro-frontends#readme",
+  "workspaces": [
+    "react-typescript",
+    "angular-parent",
+    "vue2-grand-child"
+  ]
 }
